@@ -1,0 +1,10 @@
+<form action={{ route('auth.login' )}} method="post" class="d--flex f--direction--column items--center gap--1">
+    @if(flashMessages.has('form'))
+    <div role="alert">{{ flashMessages.get('form') }}</div>
+    @end
+    <input class="w--10" type="email" placeholder="email" name="email" autocomplete="email" />
+    <input class="w--10" type="password" autocomplete="current-password" placeholder="mot de passe" name="password" />
+    <button class="btn" type="submit">envoyer</button>
+    <hr class="d--flex justify--center border--1 border--red--light--9 border--solid w--3-6" />
+    <a href="/register">Ou se créer un compte</a>
+</form>

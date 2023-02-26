@@ -1,0 +1,14 @@
+<form action={{ route('auth.register')}} method="post" class="d--flex f--direction--column items--center gap--1">
+    @if(flashMessages.has('errors'))
+    @each(error in flashMessages.get('errors'))
+    <div role="alert">{{ error }}</div>
+    @end
+    @end
+    <input class="w--10" type="text" name="username" autocomplete="username" placeholder="entrer une surnom" />
+    <input class="w--10" type="email" name="email" autocomplete="email" placeholder="une une adresse mail valide" />
+    <input class="w--10" type="password" name="password" autocomplete="new-password"
+        placeholder="enteer un mot de passe" />
+    <button type="submit" class="btn">S'inscrire</button>
+    <hr class="d--flex justify--center border--1 border--red--light--9 border--solid w--3-6" />
+    <a href="/login">Ou se connecter</a>
+</form>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="blog perso" />
+    <title>Connexion - blog perso</title>
+    @entryPointStyles('app')
+    @entryPointScripts('app')
+</head>
+
+<body>
+    <header>
+        @include('partials/navbar')
+    </header>
+    <main>
+        <h2 class="d--flex justify--center text--xl">Connexion</h2>
+        @include('partials/formLogin')
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+{{-- require sasslib --}}
+<nav class="navbar--red text--white mb-4">
+    <div class="container">
+        <a href="/" class="site--title">
+            <h2>blog perso</h2>
+        </a>
+        <label class="navbar--mobile--btn" for="navbar--input">Menu</label>
+        <input type="checkbox" name="navbar--input" id="navbar--input" class="navbar--mobile--checked" />
+        <ul class="items">
+            <li class="item"><a href="/">Accueil</a></li>
+            @if(auth.user)
+            <li class="item"><a href="/account">Mon compte</a></li>
+            @else
+            <li class="item"><a href="/login">Connexion</a></li>
+            @end
+        </ul>
+    </div>
+</nav>
