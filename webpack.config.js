@@ -169,8 +169,19 @@ Encore.configureDevServerOptions((options) => {
 | PostCSS or CSS.
 |
 */
-// Encore.enablePostCssLoader()
-// Encore.configureCssLoader(() => {})
+Encore.enablePostCssLoader()
+Encore.addStyleEntry('sasslib.min', './resources/css/sasslib.min.css')
+Encore.addEntries({ highlight: './resources/js/highlight.js' })
+
+/*
+|--------------------------------------------------------------------------
+| Plugins
+|--------------------------------------------------------------------------
+|
+| Webpacks plugins.
+| 
+|
+*/
 
 /*
 |--------------------------------------------------------------------------
