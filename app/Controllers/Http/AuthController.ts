@@ -9,7 +9,7 @@ enum AUTHSTATE {
 
 export default class AuthController {
   public async accountShow({ view, auth, response }: HttpContextContract) {
-    if (auth.isLoggedOut) response.redirect().toRoute('auth.login.show')
+    if (!auth.isLoggedIn) return response.redirect().toRoute('auth.login.show')
     return view.render('auth/account')
   }
 
@@ -83,5 +83,31 @@ export default class AuthController {
   public async logout({ auth, response }: HttpContextContract) {
     await auth.logout()
     return response.redirect('/')
+  }
+
+  public async resetPassword({ auth, request, response }: HttpContextContract) {
+    const payloadSchema = schema.create({ newPassword: schema.string() })
+    const { newPassword } = await request.validate({ schema: payloadSchema })
+    if (auth.isLoggedIn) {
+      console.log(request.body())
+
+      try {
+        await User.updateOrCreate({ id: auth.user?.id }, { password: newPassword })
+        await auth.logout()
+        response.redirect('/resetPassword/success')
+      } catch (error) {
+        return response.redirect('/resetPassword/error')
+      }
+    } else {
+      return response.unauthorized()
+    }
+  }
+
+  public async resetPasswordSuccessShow({ view }: HttpContextContract) {
+    return view.render('auth/resetPassword/success')
+  }
+
+  public async resetPasswordErrorShow({ view }: HttpContextContract) {
+    return view.render('auth/resetPassword/error')
   }
 }
