@@ -2,10 +2,20 @@
   "entrypoints": {
     "app": {
       "css": [
-        "/assets/app.21f88920.css"
+        "http://localhost:8080/assets/app.css"
       ],
       "js": [
-        "/assets/app.31d6cfe0.js"
+        "http://localhost:8080/assets/app.js"
+      ]
+    },
+    "highlight": {
+      "js": [
+        "http://localhost:8080/assets/highlight.js"
+      ]
+    },
+    "sasslib.min": {
+      "css": [
+        "http://localhost:8080/assets/sasslib.min.css"
       ]
     }
   }

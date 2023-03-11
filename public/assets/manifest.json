@@ -1,4 +1,6 @@
 {
-  "assets/app.css": "/assets/app.21f88920.css",
-  "assets/app.js": "/assets/app.31d6cfe0.js"
+  "assets/app.css": "http://localhost:8080/assets/app.css",
+  "assets/app.js": "http://localhost:8080/assets/app.js",
+  "assets/highlight.js": "http://localhost:8080/assets/highlight.js",
+  "assets/sasslib.min.css": "http://localhost:8080/assets/sasslib.min.css"
 }
