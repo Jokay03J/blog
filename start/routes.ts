@@ -20,6 +20,6 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 import './routes/user'
+import './routes/post'
 
-Route.get('/', 'HomeController.index')
 Route.get('/account', 'AuthController.accountShow')
