@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="blog perso" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau post - blog perso</title>
+    @entryPointStyles('sasslib.min')
+    @entryPointScripts('highlight')
+</head>
+
+<body>
+    <header>
+        @include('partials/navbar')
+    </header>
+    <main>
+
+        <h1 class="d--flex justify--center text--lg">Nouveau post</h1>
+        @include('partials/formNewPost')
+    </main>
+</body>
+
+</html>

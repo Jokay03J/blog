@@ -18,14 +18,26 @@
         <h1 class="d--flex justify--center text--lg">Compte</h1>
         <section id="about" class="card px--1 w--5-6">
             <h2 class="card--title">Informations</h2>
-            <article>
-                <h3>Surnom</h3>
-                <input value={{ auth.user.username }} disabled />
-            </article>
-            <article>
-                <h3>email</h3>
-                <input value={{ auth.user.email }} disabled />
-            </article>
+            <div class="d--flex f--direction--column sm--f--direction--row gap--2">
+                <section class="sm--w--10">
+                    <article>
+                        <h3>Surnom</h3>
+                        <input value={{ auth.user.username }} disabled class="w--11-12" />
+                    </article>
+                    <article>
+                        <h3>email</h3>
+                        <input value={{ auth.user.email }} disabled class="w--11-12" />
+                    </article>
+                </section>
+                <section class="w--11-12 sm--w--10">
+                    <form method="post" action={{ route('auth.resetPassword')}} class="d--flex f--direction--column">
+                        <h3 class="">Nouveau mot de passe</h3>
+                        <input required title="nouveau mot de passe" name="newPassword" type="password"
+                            autocomplete="new-password" placeholder="entrer votre nouveau mot de passe" />
+                        <button type="submit" class="btn--red text--white mt--1">Modifier mon mot de passe</button>
+                    </form>
+                </section>
+            </div>
             <form action={{ route('auth.logout' )}} class="p--1"><button class="btn">Déconnexion</button></form>
         </section>
     </main>

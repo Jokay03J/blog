@@ -6,8 +6,8 @@
     <meta name="description" content="blog perso" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blog perso</title>
+    @entryPointStyles('sasslib.min')
     @entryPointStyles('app')
-    @entryPointScripts('app')
 </head>
 
 <body>
@@ -16,7 +16,19 @@
     </header>
     <main>
         <h1 class="d--flex justify--center text--lg">Accueil</h1>
+        <h2 class="pl--3">Derniers postes</h2>
+        <section class="gap--1 justify--center d--flex" style="overflow: scroll;">
+            @!component('components/card', { title: 'test'})
+            @!component('components/card', { title: 'test'})
+            @!component('components/card', { title: 'test'})
+            @!component('components/card', { title: 'test'})
+            @!component('components/card', { title: 'test'})
+            @!component('components/card', { title: 'test'})
+            @!component('components/card', { title: 'test'})
+            @!component('components/card', { title: 'test'})
+            @!component('components/card', { title: 'test'})
 
+        </section>
     </main>
 </body>
 

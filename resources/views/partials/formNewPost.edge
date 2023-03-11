@@ -1,0 +1,22 @@
+<form action={{ route('posts.create' )}} method="post" class="d--flex f--direction--column items--center gap--1">
+    @if(flashMessages.has('errors'))
+    @each(error in flashMessages.get('errors'))
+    <div role="alert" class="text--red">{{ error }}</div>
+    @end
+    @end
+    <input class="w--10 h--1" type="text" placeholder="titre du post" name="title" maxlength="50" autocomplete="off" />
+    <input class="w--10 h--1" type="text" autocomplete="off" name="description" placeholder="description" maxlength="100"
+        name="description du post" />
+    <div class="d--flex">
+        <button class="btn--primary text--white" id="btn-preview" type="button">afficher le rendu</button>
+    </div>
+    <div class="d--flex w--full justify--center" id="editors"><textarea spellcheck="false" id="area"
+            class="min--w--10 min--h--3 p--1" style=" max-width: 95%;" placeholder="contenu du post"
+            name="content"></textarea>
+        <div class="min--w--10 min--h--3 p--1 d--none" id="preview" style=" max-width: 95%;" id="preview"
+            name="content">
+        </div>
+    </div>
+    <small>l'éditeur supporte uniquement le <strong style="font-weight: bold;">markdown et le texte</strong></small>
+    <button class="btn" type="submit">envoyer</button>
+</form>

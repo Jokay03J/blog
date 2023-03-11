@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="blog perso" />
+    <title>Compte - blog perso</title>
+    @entryPointStyles('app')
+    @entryPointScripts('app')
+</head>
+
+<body>
+    <header>
+        @include('partials/navbar')
+    </header>
+    <main class=" d--flex f--direction--column items--center ">
+        <h1 class="d--flex justify--center text--lg">Rénitialiser mon mot de passe</h1>
+        <p class="d--flex justify--center text--red">Une erreur est survenue lors de la rénitialisation de votre mot de
+            passe .</p>
+    </main>
+</body>
+
+</html>

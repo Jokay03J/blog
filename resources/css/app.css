@@ -1,1 +1,5 @@
-@import url("./sasslib.min.css");
+.posts--container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  justify-content: center;
+}

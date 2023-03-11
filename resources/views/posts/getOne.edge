@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="blog perso" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{post.title}} - blog perso</title>
+    @entryPointStyles('sasslib.min')
+</head>
+
+<body>
+    <header>
+        @include('partials/navbar')
+    </header>
+    <main class="d--flex items--center f--direction--column">
+        <section class="card border--none w--11-12 my--1">
+            <h1 class="card--title text--lg">{{post.title}}</h1>
+            <div class="d--flex text--gray">
+                {{-- author username --}}
+                <div class="d--flex items--center mr--1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" data-darkreader-inline-stroke=""
+                        style="--darkreader-inline-stroke:currentColor;">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg> {{post.author.username}}</div>
+                {{-- updatedAt time --}}
+                <time class="d--flex items--center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" data-darkreader-inline-stroke=""
+                        style="--darkreader-inline-stroke:currentColor;">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>{{post.updatedAt.toISODate()}}</time>
+            </div>
+            {{-- post content --}}
+            <div class="my--1">
+                {{{post.content}}}
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
